@@ -1,0 +1,13 @@
+# Default settings for gpsdate
+
+# The host to connect to, default localhost
+#GPSDATE_HOST=
+
+# The port to connect to, default 2947(gpsd default)
+#GPSDATE_PORT=
+
+# Other parameters to gpsdate
+# Available parameters: 
+#  --num-retries(default: 1)
+#  --retry-sleep(default: 1)
+GPSDATE_OTHER=""

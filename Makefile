@@ -14,3 +14,11 @@ gps-watchdog: gps-watchdog.o
 
 clean:
 	@rm -f gpsdate gps-watchdog *.o
+
+install:
+	mkdir -p $(DESTDIR)/usr/sbin
+	mkdir -p $(DESTDIR)/lib/systemd/system
+	mkdir -p $(DESTDIR)/etc/default
+	install gpsdate $(DESTDIR)/usr/sbin
+	install --mode 644 gpsdate.service $(DESTDIR)/lib/systemd/system
+	install --mode 644 gpsdate-default $(DESTDIR)/etc/default/gpsdate

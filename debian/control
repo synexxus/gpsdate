@@ -1,0 +1,21 @@
+Source: gpsdate
+Section: unknown
+Priority: optional
+Maintainer: Robert Middleton <rmiddleton@synexxus.com>
+Build-Depends: debhelper (>= 9), dh-systemd, libgps-dev
+Standards-Version: 3.9.5
+Homepage: http://git.sysmocom.de/gpsdate/
+#Vcs-Git: git://anonscm.debian.org/collab-maint/gpsdate.git
+#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/gpsdate.git;a=summary
+
+Package: gpsdate
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: gpsd
+Description: Set date based on time from gpsd
+ Set the date for the system based on the GPS lock
+ from gpsd.  Once the initial time has been set, 
+ the intent is that ntpd will continue to update 
+ the time.  This is needed as otherwise ntpd will
+ not properly sync the time if the GPS time and 
+ the computer time is more than 4 hours apart.
